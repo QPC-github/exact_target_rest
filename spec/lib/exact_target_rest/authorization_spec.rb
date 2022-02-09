@@ -66,7 +66,7 @@ describe Authorization do
     it "serializes and deserializes Authorization" do
       auth = subject.new(auth_url, client_id, client_secret).authorize!
 
-      expect(YAML::load(auth.to_yaml)).to be_instance_of(ExactTargetRest::Authorization)
+      expect(YAML::unsafe_load(auth.to_yaml)).to be_instance_of(ExactTargetRest::Authorization)
     end
   end
 

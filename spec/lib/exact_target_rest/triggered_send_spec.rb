@@ -68,7 +68,7 @@ describe TriggeredSend do
           subscriber_attributes: { "City" => "São Paulo", "Profile ID" => "42" }
         )
 
-      expect(YAML::load(ts.to_yaml)).to be_instance_of(ExactTargetRest::TriggeredSend)
+        expect(YAML::unsafe_load(ts.to_yaml)).to be_instance_of(ExactTargetRest::TriggeredSend)
     end
   end
 
