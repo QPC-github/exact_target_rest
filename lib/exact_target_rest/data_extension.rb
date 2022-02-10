@@ -25,7 +25,7 @@ module ExactTargetRest
     def upsert(data_extension_rows)
       @authorization.with_authorization do |access_token|
         resp = endpoint.post do |p|
-          p.url(format(DATA_EXTENSION_PATH, URI.encode(@external_key)))
+          p.url(format(DATA_EXTENSION_PATH, Addressable::URI.encode(@external_key)))
           p.headers['Authorization'] = "Bearer #{access_token}"
           p.body = @param_formatter.transform(data_extension_rows)
         end
