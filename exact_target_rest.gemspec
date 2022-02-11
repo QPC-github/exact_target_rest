@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'addressable', '~> 2.8'
   spec.add_dependency 'faraday', '~> 1.8'
   spec.add_dependency 'faraday_middleware', '~> 1.2'
 
